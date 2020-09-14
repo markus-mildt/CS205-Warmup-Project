@@ -6,12 +6,15 @@
 Commands: 
 "quotes" indicates user input
 
-help - get help with commands
+help - get help with commands  
+
 load data - creates the database and loads the data from the csv  
 
 "player name" location - gets the location of the team that the user-specified player is on  
 
 "player name" team - gets the name of the team that a user-specified player is on  
+
+"Player name" position - gets the position of a user-specified player
 
 "team name" location - gets the location of a user-specified team  
 
