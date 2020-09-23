@@ -1,4 +1,10 @@
+import help
+
+
 def main():
-    print("bruh")
+
+    help.help()
+
+
 
 main()
