@@ -8,7 +8,6 @@ import os
 
 def main():
 
-    help()
     parse()
 
     return 0
