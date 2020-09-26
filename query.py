@@ -1,9 +1,11 @@
-def query(arg):
+def query(index, column, table):
+    # query takes 3 arguments
+    # index is whatever the user puts between quotes, column is whatever is after the quotes, which is the column of one of the tables
+    # table is which table needs to be queried
+    # if whatever the user requested does not exist query should return -1
+
     #format query from arg
 
-    #####Realized there's no way to tell the difference between 2 of our queries without using the database
-    # "Team Name" Location and "Player Name" Location look identical if you don't have access to the database.
-    # So for a location query we're going to have to look in both tables to see if the string matches
 
     #do query
 

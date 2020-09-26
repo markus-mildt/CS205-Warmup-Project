@@ -7,12 +7,19 @@ def parse():
 
         waiting_for_input = True
         while waiting_for_input:
+            # "player name" team
+            # "Player name" position
+            # "team name" goals
+            # "player name" goals
+            # team "location"
+            # "player name" location
+            # "team name" location
+
+            valid_columns = ["team", "postion", "goals", "location"]
             # get input from keyboard
             query_input = ""
             query_input = input("Enter Query\n")
 
-
-            #validate
             valid = False
 
             if (query_input == "help"):
@@ -22,21 +29,34 @@ def parse():
             if (query_input == "load data"):
                 load_data()
 
-            #"player name" location
-            #"team name" location
-            #"player name" team
-            #"Player name" position
+            ###
+            # getting the stuff between quotes if there are quotes
+            ###
+            quote_start = query_input.find("\"")
+            if(quote_start == 0):
+                quote_end = query_input.find("\"", quote_start+1)
+                if(quote_end != -1):
+                    index = query_input[quote_start+1:quote_end]
+                    print(user_specified_string)
+                    column = query_input[quote_end:]
+                    if column in valid_columns:
+                        valid = True
 
-            #"team name" goals
-            #"player name" goals
-            #team "location"
+            # Gets whatever is after the quotes
+
+
 
             if valid:
                 waiting_for_input = False
+            else:
+                print("Invalid Query, type help for help")
+
         #call query function with valid input
+        # query_return = query(index, column)
         query_return = query_test("'Jack Eichel' position")
 
-        #if(query_return) returns valid:
+        if(query_return == -1):
+            print("Invalid Query")
         print(query_return)
         #else:
             #print error message
