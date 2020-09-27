@@ -4,7 +4,6 @@
 
 
 Commands: 
-"quotes" indicates user input
 
 help - get help with commands  
 
@@ -28,6 +27,6 @@ Team Name goals - gets the number of goals for a user-specified team
 "player name" goals - gets the number of goals that a user-specified player got  
     SELECT individual_goals FROM Teams WHERE player_name = ?;
 
-Team Name "location" - gets the team(s) at a user-specified location  
+team "location" - gets the team(s) at a user-specified location  
     SELECT team_name FROM Teams WHERE location = ?;
 
