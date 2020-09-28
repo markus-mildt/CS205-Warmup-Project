@@ -15,7 +15,7 @@ def parse():
             # "player name" location
             # "team name" location
 
-            valid_columns = ["team", "postion", "goals", "location"]
+            valid_columns = ["team", "position", "goals", "location"]
             # get input from keyboard
             query_input = ""
             query_input = input("Enter Query\n")
@@ -27,7 +27,7 @@ def parse():
 
             #load data
             if (query_input == "load data"):
-                load_data()
+                load_data.load_data()
 
             ###
             # getting the stuff between quotes if there are quotes

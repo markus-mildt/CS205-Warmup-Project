@@ -1,7 +1,6 @@
 import sqlite3
 import csv
 
-
 def create_table():
     conn = sqlite3.connect('NHL.db')
     cur = conn.cursor()
@@ -16,6 +15,7 @@ def create_table():
             [individual_goals_scored] integer)''')
 
     conn.commit()
+    return conn
 
 
 def load_data():
@@ -27,10 +27,14 @@ def load_data():
     skaters_rows = csv.reader(skaters_file)
     cur.executemany('''INSERT INTO PLAYERS (player_name,player_team,current_position,individual_goals_scored) 
     VALUES (?,?,?,?)''', skaters_rows)
+    skaters_file.close()
 
     teams_file = open("teams_nhl.csv")
     teams_rows = csv.reader(teams_file)
     cur.executemany('''INSERT INTO TEAMS (team_name,location,total_goals_scored) 
         VALUES (?,?,?)''', teams_rows)
+    teams_file.close()
 
     conn.commit()
+    return conn
+
