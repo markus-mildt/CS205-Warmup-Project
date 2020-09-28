@@ -8,11 +8,11 @@ import os
 
 
 def main():
+    # help()
 
-
-    query.test()
+    # query.test()
     #help()
-    #parse()
+    parse()
 
     return 0
 

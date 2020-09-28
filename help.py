@@ -2,6 +2,14 @@
 
 def help():
 
+    print("Hello! Welcome to ")
+
+
+
+
+
+
+
     answer = input("What do you need help with? Press 1 for a summary of our program, 2 for how to use the commands, or 3 to quit: ")
     valid = False
     valid2 = False

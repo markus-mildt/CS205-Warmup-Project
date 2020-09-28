@@ -29,6 +29,11 @@ def parse():
             if (query_input == "load data"):
                 load_data.load_data()
 
+            # quit the program
+            if (query_input == "quit"):
+                print("Thank you.")
+                return 0
+            
             index = ""
             column = ""
             table = ""
