@@ -27,7 +27,7 @@ def parse():
 
             #load data
             if (query_input == "load data"):
-                load_data()
+                load_data.load_data()
 
             index = ""
             column = ""

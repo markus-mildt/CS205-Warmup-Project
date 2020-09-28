@@ -1,19 +1,20 @@
 from parse import parse
-from query import query
+import query
 from help import help
 from load_data import load_data
 from parser_test import parser_test
-
+import query
 import os
 
 
 def main():
 
-    load_data()
+
+    query.test()
     #help()
     #parse()
 
-
     return 0
+
 
 main()
