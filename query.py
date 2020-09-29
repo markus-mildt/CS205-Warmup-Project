@@ -9,6 +9,7 @@ def test():
     get_team_goals("Buffalo Sabres", conn)
     get_player_goals("Jack Eichel", conn)
     get_all_teams_from_location("New York", conn)
+    get_player_location("Jack Eichel", conn)
     get_all_players_from_team("Buffalo Sabres", conn)
 
 # team name location
@@ -49,6 +50,26 @@ def query(index, column, table):
 
 
 
+# This is the join query
+def get_player_location(player_name, conn):
+    if conn is None:
+        return "No connection found. Please enter the command 'load data' in the terminal."
+
+    cur = conn.cursor()
+    team_name = get_player_team(player_name,conn)
+    query = '''SELECT DISTINCT location FROM Teams WHERE team_name = ?'''
+    cur.execute(query, (team_name,))
+    query_output = cur.fetchall()
+    conn.commit()
+
+    if len(query_output) != 0:
+        for x in query_output:
+            return x[0]
+    else:
+        print("There was nothing to match with your input.")
+        return -1
+
+
 def get_player_team(player_name, conn):
     # query takes 3 arguments
     # index is whatever the user puts between quotes or the name of the team, column should correspond with the column of a table.
@@ -62,16 +83,16 @@ def get_player_team(player_name, conn):
         return "No connection found. Please enter the command 'load data' in the terminal."
 
     cur = conn.cursor()
-    query = "SELECT DISTINCT player_team FROM Players WHERE player_name =?"
+    query = '''SELECT DISTINCT player_team FROM Players WHERE player_name =?'''
     cur.execute(query, (player_name,))
 
     # fetchall returns rows as tuples
-    output = cur.fetchall()
+    query_output = cur.fetchall()
     conn.commit()
 
-    if len(output) != 0:
-        for x in output:
-            return (x[0])
+    if len(query_output) != 0:
+        for x in query_output:
+            return x[0]
     else:
         print("There was nothing to match with your input.")
         return -1
@@ -86,12 +107,12 @@ def get_player_position(player_name, conn):
     cur = conn.cursor()
     query = '''SELECT DISTINCT current_position FROM Players WHERE player_name = ?'''
     cur.execute(query, (player_name,))
-    output = cur.fetchall()
+    query_output = cur.fetchall()
     conn.commit()
 
-    if len(output) != 0:
-        for x in output:
-            return (x[0])
+    if len(query_output) != 0:
+        for x in query_output:
+            return x[0]
     else:
         print("There was nothing to match with your input.")
         return -1
@@ -110,12 +131,12 @@ def get_team_location(team_name, conn):
     cur = conn.cursor()
     query = '''SELECT DISTINCT location FROM Teams WHERE team_name = ?'''
     cur.execute(query, (team_name,))
-    output = cur.fetchall()
+    query_output = cur.fetchall()
     conn.commit()
 
-    if len(output) != 0:
-        for x in output:
-            return (x[0])
+    if len(query_output) != 0:
+        for x in query_output:
+            return x[0]
     else:
         print("There was nothing to match with your input.")
         return -1
@@ -134,12 +155,12 @@ def get_team_goals(team_name, conn):
     cur = conn.cursor()
     query = '''SELECT DISTINCT total_goals_scored FROM Teams WHERE team_name = ?'''
     cur.execute(query, (team_name,))
-    output = cur.fetchall()
+    query_output = cur.fetchall()
     conn.commit()
 
-    if len(output) != 0:
-        for x in output:
-            return (x[0])
+    if len(query_output) != 0:
+        for x in query_output:
+            return x[0]
     else:
         print("There was nothing to match with your input.")
         return -1
@@ -158,12 +179,12 @@ def get_player_goals(player_name, conn):
     cur = conn.cursor()
     query = '''SELECT DISTINCT individual_goals_scored FROM Players WHERE player_name = ?'''
     cur.execute(query, (player_name,))
-    output = cur.fetchall()
+    query_output = cur.fetchall()
     conn.commit()
 
-    if len(output) != 0:
-        for x in output:
-            return (x[0])
+    if len(query_output) != 0:
+        for x in query_output:
+            return x[0]
     else:
         print("There was nothing to match with your input.")
         return -1
@@ -182,12 +203,11 @@ def get_all_teams_from_location(location, conn):
     cur = conn.cursor()
     query = "SELECT DISTINCT team_name FROM Teams WHERE location =?"
     cur.execute(query, (location,))
-    output = cur.fetchall()
+    query_output = cur.fetchall()
     conn.commit()
 
-    if len(output) != 0:
-        for x in output:
-            return (x[0])
+    if len(query_output) != 0:
+        return query_output
     else:
         print("There was nothing to match with your input.")
         return -1
@@ -208,12 +228,11 @@ def get_all_players_from_team(player_team, conn):
     cur = conn.cursor()
     query = "SELECT DISTINCT player_name FROM Players WHERE player_team =?"
     cur.execute(query, (player_team,))
-    output = cur.fetchall()
+    query_output = cur.fetchall()
     conn.commit()
 
-    if len(output) != 0:
-        for x in output:
-            return (x[0])
+    if len(query_output) != 0:
+        return query_output
     else:
         print("There was nothing to match with your input.")
         return -1
