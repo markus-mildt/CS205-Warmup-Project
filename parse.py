@@ -118,7 +118,7 @@ def parse():
                 # team "location"
                 # print("quotestart is: " + str(quote_start))
                 if query_input[0:4] == "team":
-                    print(query_input.find(" \""))
+                    query_input.find(" \"")
                     if query_input[4:6] == " \"" and query_input[-1] == "\"":
 
                         index = query_input[6:-1]
@@ -126,8 +126,7 @@ def parse():
                         table = "getTeam"
                         query_return = query(index, column, table)
                         if query_return == -1:
-                            print(
-                                "We could not find a team at that location, remember that input is case-sensitive and try again, or try another query. Type help for help")
+                            print("We could not find a team at that location, remember that input is case-sensitive and try again, or try another query. Type help for help")
                             query_return = ""
                     else:
                         print("Your query cannot be recognized, type help for help")
@@ -137,7 +136,7 @@ def parse():
                     # getting the index where the second space in the query is
                     for column in valid_columns:
                         column_start = query_input.find(column)
-                        print(column_start)
+                        # print(column_start)
                         if column_start != -1:
                             break
 
