@@ -73,7 +73,7 @@ def get_player_team(player_name, conn):
         for x in output:
             return (x[0])
     else:
-        print("There was nothing to match with your input.")
+        # print("There was nothing to match with your input.")
         return -1
 
     # conn.commit()
@@ -93,7 +93,7 @@ def get_player_position(player_name, conn):
         for x in output:
             return (x[0])
     else:
-        print("There was nothing to match with your input.")
+        # print("There was nothing to match with your input.")
         return -1
 
     # conn.commit()
@@ -117,7 +117,7 @@ def get_team_location(team_name, conn):
         for x in output:
             return (x[0])  # this value is the location
     else:
-        print("There was nothing to match with your input.")
+        # print("There was nothing to match with your input.")
         return -1
 
     # conn.commit()
@@ -141,7 +141,7 @@ def get_team_goals(team_name, conn):
         for x in output:
             return (x[0])
     else:
-        print("There was nothing to match with your input.")
+        # print("There was nothing to match with your input.")
         return -1
 
     # conn.commit()
@@ -165,7 +165,7 @@ def get_player_goals(player_name, conn):
         for x in output:
             return (x[0])
     else:
-        print("There was nothing to match with your input.")
+        # print("There was nothing to match with your input.")
         return -1
 
     # conn.commit()
@@ -189,7 +189,7 @@ def get_all_teams_from_location(location, conn):
         for x in output:
             return (x[0])
     else:
-        print("There was nothing to match with your input.")
+        # print("There was nothing to match with your input.")
         return -1
 
     # conn.commit()
@@ -215,7 +215,7 @@ def get_all_players_from_team(player_team, conn):
         for x in output:
             return (x[0])
     else:
-        print("There was nothing to match with your input.")
+        # print("There was nothing to match with your input.")
         return -1
 
     # conn.commit()
