@@ -73,7 +73,7 @@ def parse():
             ###########
             # testing, delete later
             ##########
-            query_input = "New York Islanders goals"
+            #query_input = "New York Islanders goals"
             ##########
             # Testing, delete later
             #########
