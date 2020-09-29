@@ -3,34 +3,35 @@ from query import query
 import help
 import load_data
 
-#Parser Testing:
-#team "location":
+
+# Parser Testing:
+# team "location":
 ##correct behavior on good input: yes
-#bad input: yes
+# bad input: yes
 
 # team name location:
 ##correct behavior on good input: yes
-#bad input: yes
+# bad input: yes
 
 # team name goals
 ##correct behavior on good input: yes
-#bad input: yes
+# bad input: yes
 
 # "player name" team
 ##correct behavior on good input:
-#bad input:
+# bad input:
 
 # "player name" position
 ##correct behavior on good input:
-#bad input:
+# bad input:
 
 # "player name" location
 ##correct behavior on good input:
-#bad input:
+# bad input:
 
 # "player name" goals
 ##correct behavior on good input:
-#bad input:
+# bad input:
 
 def parse():
     parsing = True
@@ -56,7 +57,7 @@ def parse():
             if (query_input == "help"):
                 help.help()
 
-            #load data
+            # load data
             if (query_input == "load data"):
                 load_data.load_data()
 
@@ -64,7 +65,7 @@ def parse():
             if query_input == "quit":
                 print("Thank you.")
                 return 0
-            
+
             index = ""
             column = ""
             table = ""
@@ -73,33 +74,34 @@ def parse():
             ###########
             # testing, delete later
             ##########
-            #query_input = "New York Islanders goals"
+            query_input = "\"Jack Eichel\" goals"
             ##########
             # Testing, delete later
             #########
-
 
             ###
             # getting the stuff between quotes if there are quotes
             ###
             quote_start = query_input.find("\"")
 
-            # "player name" team
+            # "player name" team        teams do NOT start with quotes
             # "player name" position
             # "player name" location
             # "player name" goals
+            print("quote start is " + str(quote_start))
+
             if quote_start == 0:
                 table = "players"
-                quote_end = query_input.find("\"", quote_start+1)
+                quote_end = query_input.find("\"", quote_start + 1)
 
                 if quote_end != -1:
-                    index = query_input[quote_start+1:quote_end]
-                    print(user_specified_string)
+                    index = query_input[quote_start + 1:quote_end]
+                    # print(user_specified_string)
                     # Gets whatever is after the quotes
-                    column = query_input[quote_end:]
+                    column = query_input[quote_end+2:]
 
                     if column in valid_columns:
-                        query_return = query_test(index, column, table)
+                        query_return = query(index, column, table)
                         if query_return == -1:
                             print("We could not find that player's " + column)
                             print("Remember input is case sensitive and try again, or try another query")
@@ -110,6 +112,7 @@ def parse():
             # team "location"
             else:
                 # team "location"
+                print("quotestart is: " + str(quote_start))
                 if query_input[0:4] == "team":
                     print(query_input.find(" \""))
                     if query_input[4:6] == " \"" and query_input[-1] == "\"":
@@ -119,7 +122,8 @@ def parse():
                         table = "getTeam"
                         query_return = query(index, column, table)
                         if query_return == -1:
-                            print("We could not find a team at that location, remember that input is case-sensitive and try again, or try another query. Type help for help")
+                            print(
+                                "We could not find a team at that location, remember that input is case-sensitive and try again, or try another query. Type help for help")
                             query_return = ""
                     else:
                         print("Your query cannot be recognized, type help for help")
@@ -136,7 +140,7 @@ def parse():
                     if column_start == -1:
                         print("Your query cannot be recognized, type help for help")
                     else:
-                        index = query_input[:column_start-1]
+                        index = query_input[:column_start - 1]
                         column = query_input[column_start:]
                         table = "teams"
                         query_return = query(index, column, table)
@@ -144,5 +148,4 @@ def parse():
                             print("We could not find information about that team, remember input is case sensitive, type help for help")
                             query_return = ""
 
-
-            print(query_return)
+            print("query_return: " + str(query_return))

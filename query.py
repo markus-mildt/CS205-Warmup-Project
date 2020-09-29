@@ -3,13 +3,13 @@ import load_data as db
 
 def test():
     conn = db.load_data()
-    get_player_team("Jack Eichel", conn)
-    get_player_position("Jack Eichel", conn)
-    get_team_location("Buffalo Sabres", conn)
-    get_team_goals("Buffalo Sabres", conn)
-    get_player_goals("Jack Eichel", conn)
-    get_all_teams_from_location("New York", conn)
-    get_all_players_from_team("Buffalo Sabres", conn)
+    # get_player_team("Jack Eichel", conn)
+    # get_player_position("Jack Eichel", conn)
+    # get_team_location("Buffalo Sabres", conn)
+    # get_team_goals("Buffalo Sabres", conn)
+    # get_player_goals("Jack Eichel", conn)
+    # get_all_teams_from_location("New York", conn)
+    # get_all_players_from_team("Buffalo Sabres", conn)
 
 # team name location
 # team name goals
@@ -115,7 +115,7 @@ def get_team_location(team_name, conn):
 
     if len(output) != 0:
         for x in output:
-            return (x[0])
+            return (x[0])  # this value is the location
     else:
         print("There was nothing to match with your input.")
         return -1

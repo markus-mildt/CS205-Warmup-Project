@@ -10,14 +10,9 @@ def help():
           "goals.  For example, your command may look like this: 'Team Name' goals.  This will \n"
           "return the total number of goals a team has scored.  Additionally, you can use the command:\n"
           "Team Name 'location', which will return all of the teams in a given location.  An example\n"
-          "would be: Team Name Vermont, which would return all of the teams in Vermont. Thank you for\n"
-          "reading.  If you have any quesitons, please contact our technical support team. Happy querying!")
-
-
-
-
-
-
+          "would be: Team Name Vermont, which would return all of the teams in Vermont. Finally, you can\n"
+          "use the quit command to quit the program. Thank you for reading.  If you have any quesitons, \n"
+          "please contact our technical support team. Happy querying!")
 
     # answer = input("What do you need help with? Press 1 for a summary of our program, 2 for how to use the commands, or 3 to quit: ")
     # valid = False
