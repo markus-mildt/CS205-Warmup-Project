@@ -20,10 +20,10 @@ load data - creates the database and loads the data from the csv
 "Player name" position - gets the position of a user-specified player
     SELECT position FROM Teams WHERE player_name = ?;
 
-"Team Name" location - gets the location of a user-specified team 
+Team Name location - gets the location of a user-specified team 
     SELECT location FROM Teams WHERE team_name = ?;
      
-"Team Name" goals - gets the number of goals for a user-specified team  
+Team Name goals - gets the number of goals for a user-specified team  
     SELECT goals FROM Teams WHERE team_name = ?;
 
 "player name" goals - gets the number of goals that a user-specified player got  
