@@ -74,7 +74,7 @@ def parse():
             ###########
             # testing, delete later
             ##########
-            query_input = "\"Jack Eichel\" team"
+            # query_input = "\"Jack Eichel\" team"
             ##########
             # Testing, delete later
             #########
