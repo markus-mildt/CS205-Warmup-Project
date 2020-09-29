@@ -1,4 +1,5 @@
 from query_test import query_test
+import query
 import help
 import load_data
 def parse():
@@ -84,7 +85,7 @@ def parse():
 
                         index = query_input[6:-2]
                         column = "location"
-                        table = "teams"
+                        table = "getTeam"
                         query_return = query_test(index, column, table)
                         if query_return == -1:
                             print("We could not find a team at that location, remember that input is case-sensitive and try again, or try another query. Type help for help")
@@ -92,6 +93,8 @@ def parse():
                     else:
                         print("1")
                 else:
+                    # team name location
+                    # team name goals
                     # getting the index where the second space in the query is
                     column_start = query_input.find(" ", query_input.find(" ") + 1)
                     if column_start == -1:
@@ -104,9 +107,6 @@ def parse():
                         if query_return == -1:
                             print("We could not find information about that team, remember input is case sensitive, type help for help")
                             query_return = ""
-
-            if query_return == -2:
-                print("The database has not been loaded yet, please use the command load data")
 
 
             print(query_return)

@@ -11,11 +11,46 @@ def test():
     get_all_teams_from_location("New York", conn)
     get_all_players_from_team("Buffalo Sabres", conn)
 
+# team name location
+# team name goals
+# team "location"
+# "player name" team
+# "player name" position
+# "player name" location
+# "player name" goals
+
+def query(index, column, table):
+    #index is the actual input for the query
+    #PLAYERS
+    if table == "players":
+        if column == "team":
+            #get_player_team("Jack Eichel", conn)
+        if column == "position":
+            #get_player_position("Jack Eichel", conn)
+        if column == "location":
+            #get_player_team("Jack Eichel", conn)
+            #then with what returns:
+            #get_team_location("Buffalo Sabres", conn)
+        if column == "goals":
+            #get_player_goals("Jack Eichel", conn)
+
+    #team "location"
+    elif table == "getTeam":
+        #get_all_teams_from_location("New York", conn)
+
+    #TEAMS
+    else:
+        if column == "location":
+            #get_team_location("Buffalo Sabres", conn)
+        if column == "goals":
+            #get_player_goals("Jack Eichel", conn)
+
+
 
 def get_player_team(player_name, conn):
     # query takes 3 arguments
     # index is whatever the user puts between quotes or the name of the team, column should correspond with the column of a table.
-    # table is which table needs to be queried
+
     # if whatever the user requested does not exist query should return -1
     # if the database has not been loaded yet query should return -2
 
