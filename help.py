@@ -5,7 +5,7 @@ def help():
     print("Hello! Welcome to our CS205 Warmup Project.  For this projects, we have created \n"
           "a command-line interface to query data from a database of hockey teams and players.\n"
           "To retrieve data about the players, use the commands: location, team, position, and goals.\n"
-          "For example, your command may look like this: 'Player Name' team. This will return what\n"
+          "For example, your command may look like this: \"Player Name\" team. This will return what\n"
           "team the player is on.  To retrieve data about the teams, use the commands: location and\n"
           "goals.  For example, your command may look like this: 'Team Name' goals.  This will \n"
           "return the total number of goals a team has scored.  Additionally, you can use the command:\n"

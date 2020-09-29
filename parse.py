@@ -74,7 +74,7 @@ def parse():
             ###########
             # testing, delete later
             ##########
-            query_input = "\"Jack Eichel\" goals"
+            query_input = "\"Jack Eichel\" team"
             ##########
             # Testing, delete later
             #########
@@ -88,7 +88,7 @@ def parse():
             # "player name" position
             # "player name" location
             # "player name" goals
-            print("quote start is " + str(quote_start))
+            # print("quote start is " + str(quote_start))
 
             if quote_start == 0:
                 table = "players"
