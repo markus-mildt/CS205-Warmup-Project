@@ -5,6 +5,8 @@
 
 Commands: 
 
+quit- quits the program
+
 help - get help with commands  
 
 load data - creates the database and loads the data from the csv  
