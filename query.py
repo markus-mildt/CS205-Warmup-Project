@@ -26,28 +26,26 @@ def query(index, column, table):
     #PLAYERS
     if table == "players":
         pass
-     #   if column == "team":
-            #get_player_team("Jack Eichel", conn)
-     #   if column == "position":
-            #get_player_position("Jack Eichel", conn)
-    #    if column == "location":
-            #get_player_team("Jack Eichel", conn)
-            #then with what returns:
-     #       #get_team_location("Buffalo Sabres", conn)
-     #   if column == "goals":
-            #get_player_goals("Jack Eichel", conn)
+        if column == "team":
+            return get_player_team(index, conn)
+        if column == "position":
+            return get_player_position(index, conn)
+        if column == "location":
+            return get_team_location(get_player_team(index, conn), conn)
+        if column == "goals":
+            return get_player_goals(index, conn)
 
-    ##########team "location"
+    #####team "location"
     elif table == "getTeam":
         return get_all_teams_from_location(index, conn)
 
-    #########TEAMS
+    ####TEAMS
     else:
-        pass
-    #    if column == "location":
-            #get_team_location("Buffalo Sabres", conn)
-    #    if column == "goals":
-            #get_player_goals("Jack Eichel", conn)
+
+        if column == "location":
+            return get_team_location(index, conn)
+        if column == "goals":
+            return  get_team_goals(index, conn)
 
 
 

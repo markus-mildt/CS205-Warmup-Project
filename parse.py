@@ -9,12 +9,12 @@ import load_data
 #bad input: yes
 
 # team name location:
-##correct behavior on good input:
-#bad input:
+##correct behavior on good input: yes
+#bad input: yes
 
 # team name goals
-##correct behavior on good input:
-#bad input:
+##correct behavior on good input: yes
+#bad input: yes
 
 # "player name" team
 ##correct behavior on good input:
@@ -42,7 +42,7 @@ def parse():
             # "player name" position
             # "player name" location
             # "player name" goals
-            # team name "location"
+            # team name location
             # team name goals
             # team "location"
 
@@ -73,7 +73,7 @@ def parse():
             ###########
             # testing, delete later
             ##########
-            query_input = "team \"New York\""
+            query_input = "New York Islanders goals"
             ##########
             # Testing, delete later
             #########
@@ -122,16 +122,21 @@ def parse():
                             print("We could not find a team at that location, remember that input is case-sensitive and try again, or try another query. Type help for help")
                             query_return = ""
                     else:
-                        print("1")
+                        print("Your query cannot be recognized, type help for help")
                 else:
                     # team name location
                     # team name goals
                     # getting the index where the second space in the query is
-                    column_start = query_input.find(" ", query_input.find(" ") + 1)
+                    for column in valid_columns:
+                        column_start = query_input.find(column)
+                        print(column_start)
+                        if column_start != -1:
+                            break
+
                     if column_start == -1:
                         print("Your query cannot be recognized, type help for help")
                     else:
-                        index = query_input[:column_start]
+                        index = query_input[:column_start-1]
                         column = query_input[column_start:]
                         table = "teams"
                         query_return = query(index, column, table)
