@@ -2,17 +2,32 @@
 
 def help():
 
-    print("Hello! Welcome to our CS205 Warmup Project.  For this projects, we have created \n"
-          "a command-line interface to query data from a database of hockey teams and players.\n"
-          "To retrieve data about the players, use the commands: location, team, position, and goals.\n"
-          "For example, your command may look like this: \"Player Name\" team. This will return what\n"
-          "team the player is on.  To retrieve data about the teams, use the commands: location and\n"
-          "goals.  For example, your command may look like this: 'Team Name' goals.  This will \n"
-          "return the total number of goals a team has scored.  Additionally, you can use the command:\n"
-          "Team Name 'location', which will return all of the teams in a given location.  An example\n"
-          "would be: Team Name Vermont, which would return all of the teams in Vermont. Finally, you can\n"
-          "use the quit command to quit the program. Thank you for reading.  If you have any quesitons, \n"
-          "please contact our technical support team. Happy querying!")
+      print("Hello! Welcome to our CS205 Warmup Project.  For this projects, we have created"
+          "a command-line interface to query data from a database of hockey teams and players.")
+
+      print("Here are the commands for players:")
+      print("\"player name\" location\"")
+      print("\"player name\" team\"")
+      print("\"player name\" position\"")
+      print("\"player name\" goals\"")
+      print("For example, in the console you would input: \"Jack Eichel\" team")
+      print("This will give the output Buffalo Sabers. Note that the player name must be in quotation"
+            "marks in order to work.")
+
+      print("")
+      print("Here are the commands for teams:")
+      print("team location\"")
+      print("team goals\"")
+      print("For example, in the console you would input: Buffalo Sabres goals")
+      print("This will give the input 193.  Note that the team name is NOT in quotation marks.")
+      print("In addition, we have a commands that gets all of the teams in one location:")
+      print("Team Name \"location\"")
+      print("For example, in the console you would input: team \"Canada\"")
+      print("This will give the Edmonton Oilers.")
+
+      print("")
+      print("Finally, we have a command for load data and quit.")
+      print("If you have any quesitons, please contact our technical support team. Happy querying!")
 
     # answer = input("What do you need help with? Press 1 for a summary of our program, 2 for how to use the commands, or 3 to quit: ")
     # valid = False
