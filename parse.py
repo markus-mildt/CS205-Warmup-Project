@@ -63,16 +63,13 @@ def parse():
             column = ""
             table = ""
             query_return = ""
-            flag = False # flag is raised if the help or load data command are called in this iteration of the loop
 
             if query_input == "help":
                 help.help()
-                flag = True
 
             # load data
             elif query_input == "load data":
                 load_data.load_data()
-                flag = True
 
             # quit the program
             elif query_input == "quit":
@@ -110,6 +107,8 @@ def parse():
                             print("We could not find that player's " + column)
                             print("Remember input is case sensitive and try again, or try another query")
                             query_return = ""
+                        print("query_return: " + str(query_return))
+
 
             # team name location
             # team name goals
@@ -128,8 +127,11 @@ def parse():
                         if query_return == -1:
                             print("We could not find a team at that location, remember that input is case-sensitive and try again, or try another query. Type help for help")
                             query_return = ""
+                        print("query_return: " + str(query_return))
+
                     else:
                         print("Your query cannot be recognized, type help for help")
+
                 else:
                     # team name location
                     # team name goals
@@ -142,6 +144,7 @@ def parse():
 
                     if column_start == -1:
                         print("Your query cannot be recognized, type help for help")
+
                     else:
                         index = query_input[:column_start - 1]
                         column = query_input[column_start:]
@@ -150,5 +153,4 @@ def parse():
                         if query_return == -1:
                             print("We could not find information about that team, remember input is case sensitive, type help for help")
                             query_return = ""
-            if flag == False:
-                print("query_return: " + str(query_return))
+                        print("query_return: " + str(query_return))
