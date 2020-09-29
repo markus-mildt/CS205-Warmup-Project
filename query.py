@@ -20,29 +20,33 @@ def test():
 # "player name" goals
 
 def query(index, column, table):
+    conn = db.load_data()
+
     #index is the actual input for the query
     #PLAYERS
     if table == "players":
-        if column == "team":
+        pass
+     #   if column == "team":
             #get_player_team("Jack Eichel", conn)
-        if column == "position":
+     #   if column == "position":
             #get_player_position("Jack Eichel", conn)
-        if column == "location":
+    #    if column == "location":
             #get_player_team("Jack Eichel", conn)
             #then with what returns:
-            #get_team_location("Buffalo Sabres", conn)
-        if column == "goals":
+     #       #get_team_location("Buffalo Sabres", conn)
+     #   if column == "goals":
             #get_player_goals("Jack Eichel", conn)
 
-    #team "location"
+    ##########team "location"
     elif table == "getTeam":
-        #get_all_teams_from_location("New York", conn)
+        return get_all_teams_from_location(index, conn)
 
-    #TEAMS
+    #########TEAMS
     else:
-        if column == "location":
+        pass
+    #    if column == "location":
             #get_team_location("Buffalo Sabres", conn)
-        if column == "goals":
+    #    if column == "goals":
             #get_player_goals("Jack Eichel", conn)
 
 
@@ -56,7 +60,7 @@ def get_player_team(player_name, conn):
 
     # format query from arg
 
-    if conn == None:
+    if conn is None:
         return "No connection found. Please enter the command 'load data' in the terminal."
 
     cur = conn.cursor()

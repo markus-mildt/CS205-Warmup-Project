@@ -1,7 +1,37 @@
 from query_test import query_test
-import query
+from query import query
 import help
 import load_data
+
+#Parser Testing:
+#team "location":
+##correct behavior on good input: yes
+#bad input: yes
+
+# team name location:
+##correct behavior on good input:
+#bad input:
+
+# team name goals
+##correct behavior on good input:
+#bad input:
+
+# "player name" team
+##correct behavior on good input:
+#bad input:
+
+# "player name" position
+##correct behavior on good input:
+#bad input:
+
+# "player name" location
+##correct behavior on good input:
+#bad input:
+
+# "player name" goals
+##correct behavior on good input:
+#bad input:
+
 def parse():
     parsing = True
     while parsing:
@@ -31,7 +61,7 @@ def parse():
                 load_data.load_data()
 
             # quit the program
-            if (query_input == "quit"):
+            if query_input == "quit":
                 print("Thank you.")
                 return 0
             
@@ -43,7 +73,7 @@ def parse():
             ###########
             # testing, delete later
             ##########
-            #query_input = "team \"New York\""
+            query_input = "team \"New York\""
             ##########
             # Testing, delete later
             #########
@@ -81,12 +111,13 @@ def parse():
             else:
                 # team "location"
                 if query_input[0:4] == "team":
-                    if query_input[5:6] == " \"" and query_input[-1] == "\"":
+                    print(query_input.find(" \""))
+                    if query_input[4:6] == " \"" and query_input[-1] == "\"":
 
-                        index = query_input[6:-2]
+                        index = query_input[6:-1]
                         column = "location"
                         table = "getTeam"
-                        query_return = query_test(index, column, table)
+                        query_return = query(index, column, table)
                         if query_return == -1:
                             print("We could not find a team at that location, remember that input is case-sensitive and try again, or try another query. Type help for help")
                             query_return = ""
@@ -103,7 +134,7 @@ def parse():
                         index = query_input[:column_start]
                         column = query_input[column_start:]
                         table = "teams"
-                        query_return = query_test(index, column, table)
+                        query_return = query(index, column, table)
                         if query_return == -1:
                             print("We could not find information about that team, remember input is case sensitive, type help for help")
                             query_return = ""
