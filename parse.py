@@ -54,22 +54,30 @@ def parse():
 
             valid = False
 
-            if (query_input == "help"):
-                help.help()
-
-            # load data
-            if (query_input == "load data"):
-                load_data.load_data()
-
-            # quit the program
-            if query_input == "quit":
-                print("Thank you.")
-                return 0
+            ###
+            # getting the stuff between quotes if there are quotes
+            ###
+            quote_start = query_input.find("\"")
 
             index = ""
             column = ""
             table = ""
             query_return = ""
+            flag = False # flag is raised if the help or load data command are called in this iteration of the loop
+
+            if query_input == "help":
+                help.help()
+                flag = True
+
+            # load data
+            elif query_input == "load data":
+                load_data.load_data()
+                flag = True
+
+            # quit the program
+            elif query_input == "quit":
+                print("Thank you.")
+                return 0
 
             ###########
             # testing, delete later
@@ -79,10 +87,6 @@ def parse():
             # Testing, delete later
             #########
 
-            ###
-            # getting the stuff between quotes if there are quotes
-            ###
-            quote_start = query_input.find("\"")
 
             # "player name" team        teams do NOT start with quotes
             # "player name" position
@@ -90,7 +94,7 @@ def parse():
             # "player name" goals
             # print("quote start is " + str(quote_start))
 
-            if quote_start == 0:
+            elif quote_start == 0:
                 table = "players"
                 quote_end = query_input.find("\"", quote_start + 1)
 
@@ -112,7 +116,7 @@ def parse():
             # team "location"
             else:
                 # team "location"
-                print("quotestart is: " + str(quote_start))
+                # print("quotestart is: " + str(quote_start))
                 if query_input[0:4] == "team":
                     print(query_input.find(" \""))
                     if query_input[4:6] == " \"" and query_input[-1] == "\"":
@@ -147,5 +151,5 @@ def parse():
                         if query_return == -1:
                             print("We could not find information about that team, remember input is case sensitive, type help for help")
                             query_return = ""
-
-            print("query_return: " + str(query_return))
+            if flag == False:
+                print("query_return: " + str(query_return))
