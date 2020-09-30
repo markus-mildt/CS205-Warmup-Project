@@ -34,7 +34,7 @@ import load_data
 # bad input:
 
 def parse():
-    print("Welcome to our NHL interface! Type 'help' for suggestions!")
+    print("Welcome to our NHL interface! Type 'help' for suggestions or 'quit' to exit!")
     print("")
     parsing = True
     while parsing:
@@ -51,6 +51,7 @@ def parse():
 
             valid_columns = ["team", "position", "goals", "location"]
             # get input from keyboard
+            print("")
             query_input = ""
             query_input = input("Enter Command\n")
 
@@ -74,7 +75,7 @@ def parse():
                 load_data.load_data()
             # quit the program
             elif query_input == "quit":
-                print("Thank you.")
+                print("Thank you! We hope you return soon!")
                 return 0
 
             ###########
