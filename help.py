@@ -42,6 +42,6 @@ def help():
       print("")
 
       print("Finally, we have a command for loading the data (load data) and quit.")
-      print("If you have any quesitons, please contact our technical support team. Happy querying!")
+      print("If you have any questions, please contact our technical support team. Happy querying!")
       print("")
 
