@@ -34,6 +34,8 @@ import load_data
 # bad input:
 
 def parse():
+    print("Welcome to our NHL interface! Type 'help' for suggestions or 'quit' to exit!")
+    print("")
     parsing = True
     while parsing:
 
@@ -49,8 +51,9 @@ def parse():
 
             valid_columns = ["team", "position", "goals", "location"]
             # get input from keyboard
+            print("")
             query_input = ""
-            query_input = input("Enter Query\n")
+            query_input = input("Enter Command\n")
 
             valid = False
 
@@ -69,11 +72,12 @@ def parse():
 
             # load data
             elif query_input == "load data":
+                print("loading data...")
                 load_data.load_data()
 
             # quit the program
             elif query_input == "quit":
-                print("Thank you.")
+                print("Thank you! We hope you return soon!")
                 return 0
 
             ###########
@@ -107,7 +111,7 @@ def parse():
                             print("We could not find that player's " + column)
                             print("Remember input is case sensitive and try again, or try another query")
                             query_return = ""
-                        print("query_return: " + str(query_return))
+                        print(str(query_return))
 
 
             # team name location
@@ -127,7 +131,7 @@ def parse():
                         if query_return == -1:
                             print("We could not find a team at that location, remember that input is case-sensitive and try again, or try another query. Type help for help")
                             query_return = ""
-                        print("query_return: " + str(query_return))
+                        print(str(query_return))
 
                     else:
                         print("Your query cannot be recognized, type help for help")
@@ -150,9 +154,7 @@ def parse():
                         column = query_input[column_start:]
                         table = "teams"
                         query_return = query(index, column, table)
-
                         if query_return == -1:
                             print("We could not find information about that team, remember input is case sensitive, type help for help")
                             query_return = ""
-                        # print(query_return)
-                        print("query_return: bruh" + str(query_return))
+                        print(str(query_return))

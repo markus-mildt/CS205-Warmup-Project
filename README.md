@@ -11,13 +11,13 @@ help - get help with commands
 
 load data - creates the database and loads the data from the csv  
 
-"player name" location - gets the location of the team that the user-specified player is on  
-    SELECT location FROM Players WHERE player_name = ?;
+"Player Name" location - gets the location of the team that the user-specified player is on  
+    this one will use the Player's name get the team, then uses the team to get the location
 
-"player name" team - gets the name of the team that a user-specified player is on  
+"Player Name" team - gets the name of the team that a user-specified player is on  
     SELECT team_name FROM Players WHERE player_name = ?;
 
-"Player name" position - gets the position of a user-specified player
+"Player Name" position - gets the position of a user-specified player
     SELECT position FROM Teams WHERE player_name = ?;
 
 Team Name location - gets the location of a user-specified team 
@@ -29,6 +29,15 @@ Team Name goals - gets the number of goals for a user-specified team
 "player name" goals - gets the number of goals that a user-specified player got  
     SELECT individual_goals FROM Teams WHERE player_name = ?;
 
-Team Name "location" - gets the team(s) at a user-specified location  
+Team "location" - gets the team(s) at a user-specified location  
     SELECT DISTINCT team_name FROM Teams WHERE location = ?;
+
+
+Sources:
+https://www.mcobject.com/docs/Content/Programming/Python/Classes/Cursor/execute_many.htm
+https://www.sqlitetutorial.net/sqlite-python/sqlite-python-select/
+https://datatofish.com/create-database-python-using-sqlite3/
+https://www.sqlitetutorial.net/sqlite-python/
+https://docs.python.org/2/library/sqlite3.html
+
 

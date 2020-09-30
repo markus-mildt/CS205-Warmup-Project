@@ -3,53 +3,45 @@
 def help():
 
       print("Hello! Welcome to our CS205 Warmup Project.  For this projects, we have created"
-          "a command-line interface to query data from a database of hockey teams and players.")
+          " a command-line interface to query data from a database of hockey teams and players.")
+      print("")
 
-      print("Here are the commands for players:")
-      print("\"player name\" location\"")
-      print("\"player name\" team\"")
-      print("\"player name\" position\"")
-      print("\"player name\" goals\"")
-      print("For example, in the console you would input: \"Jack Eichel\" team")
-      print("This will give the output Buffalo Sabers. Note that the player name must be in quotation"
-            "marks in order to work.")
+      print("Here are the commands for players (PLAYERS MUST HAVE QUOTES AROUND NAME):")
+      print("Keywords: location, team, position, goals")
+      print("\"player-name\" location")
+      print("ex: \"Jack Eichel\" location |     returns New York")
+      print("")
+
+      print("\"player-name\" team")
+      print("ex: \"Jack Eichel\" team     |        returns Buffalo Sabres")
+      print("")
+
+      print("\"player-name\" position")
+      print("ex: \"Jack Eichel\" position |     returns Center")
+      print("")
+
+
+      print("\"player-name\" goals")
+      print("ex: \"Jack Eichel\" goals    |       returns 36")
+      print("")
+
 
       print("")
-      print("Here are the commands for teams:")
-      print("team location\"")
-      print("team goals\"")
-      print("For example, in the console you would input: Buffalo Sabres goals")
-      print("This will give the input 193.  Note that the team name is NOT in quotation marks.")
-      print("In addition, we have a commands that gets all of the teams in one location:")
-      print("Team Name \"location\"")
-      print("For example, in the console you would input: team \"Canada\"")
-      print("This will give the Edmonton Oilers.")
-
+      print("Here are the commands for teams (TEAMS NOT IN QUOTES):")
+      print("Keywords: team, goals, players")
+      print("team \"location\"")
+      print("ex: team \"Massachusetts\"   |     returns Boston Bruins")
       print("")
-      print("Finally, we have a command for load data and quit.")
-      print("If you have any quesitons, please contact our technical support team. Happy querying!")
 
-    # answer = input("What do you need help with? Press 1 for a summary of our program, 2 for how to use the commands, or 3 to quit: ")
-    # valid = False
-    # valid2 = False
-    #
-    # while valid2 == False:
-    #     while valid == False:
-    #         if answer == "1" or answer == "2" or answer == "3":
-    #             valid = True
-    #         else:
-    #             answer = input("Please enter a valid response: ")
-    #
-    #     if answer == "1":
-    #         print("You have accessed the summary. better write a summary now lol...")
-    #         answer = input("Do you need anymore help? (1,2,3): ")
-    #         if answer != "1" or answer != "2" or answer != "3":
-    #             valid = False
-    #     elif answer == "2":
-    #         print("Ok now write all the commands lol..")
-    #         answer = input("Do you need anymore help? (1,2,3): ")
-    #         if answer != "1" or answer != "2" or answer != "3":
-    #             valid = False
-    #     elif answer == "3":
-    #         print("Thank you.")
-    #         valid2 = True
+      print("team-name goals")
+      print("ex: Buffalo Sabres goals   |      returns 193")
+      print("")
+
+      print("team-name players")
+      print("ex: Buffalo Sabres players |     returns entire roster of team")
+      print("")
+
+      print("Finally, we have a command for loading the data (load data) and quit.")
+      print("If you have any questions, please contact our technical support team. Happy querying!")
+      print("")
+
