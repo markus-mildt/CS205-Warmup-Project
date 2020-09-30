@@ -1,7 +1,6 @@
 # calls help, just a bunch of print statements detailing how to use our program
 
 def help():
-
       print("Hello! Welcome to our CS205 Warmup Project.  For this projects, we have created"
           " a command-line interface to query data from a database of hockey teams and players.")
       print("")
@@ -44,4 +43,3 @@ def help():
       print("Finally, we have a command for loading the data (load data) and quit.")
       print("If you have any questions, please contact our technical support team. Happy querying!")
       print("")
-

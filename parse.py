@@ -3,7 +3,6 @@ from query import query
 import help
 import load_data
 
-
 # Parser Testing:
 # team "location":
 ##correct behavior on good input: yes
@@ -58,7 +57,7 @@ def parse():
             valid = False
 
             #######testing
-            query_input = "team \"New York\""
+            # query_input = "team \"New York\""
 
             ###
             # getting the stuff between quotes if there are quotes
@@ -90,7 +89,6 @@ def parse():
             ##########
             # Testing, delete later
             #########
-
 
             # "player name" team        teams do NOT start with quotes
             # "player name" position

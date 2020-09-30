@@ -1,18 +1,9 @@
 from parse import parse
-from help import help
-from parser_test import parser_test
-import query
-import os
 
-
+# main function for project, runs parse()
 def main():
-
-
-    #print(query.test())
-    #help()
     parse()
 
     return 0
-
 
 main()
