@@ -34,6 +34,8 @@ import load_data
 # bad input:
 
 def parse():
+    print("Welcome to our NHL interface! Type 'help' for suggestions!")
+    print("")
     parsing = True
     while parsing:
 
@@ -50,7 +52,7 @@ def parse():
             valid_columns = ["team", "position", "goals", "location"]
             # get input from keyboard
             query_input = ""
-            query_input = input("Enter Query\n")
+            query_input = input("Enter Command\n")
 
             valid = False
 
@@ -66,11 +68,10 @@ def parse():
 
             if query_input == "help":
                 help.help()
-
             # load data
             elif query_input == "load data":
+                print("loading data...")
                 load_data.load_data()
-
             # quit the program
             elif query_input == "quit":
                 print("Thank you.")
@@ -107,7 +108,7 @@ def parse():
                             print("We could not find that player's " + column)
                             print("Remember input is case sensitive and try again, or try another query")
                             query_return = ""
-                        print("query_return: " + str(query_return))
+                        print(str(query_return))
 
 
             # team name location
@@ -127,7 +128,7 @@ def parse():
                         if query_return == -1:
                             print("We could not find a team at that location, remember that input is case-sensitive and try again, or try another query. Type help for help")
                             query_return = ""
-                        print("query_return: " + str(query_return))
+                        print(str(query_return))
 
                     else:
                         print("Your query cannot be recognized, type help for help")
@@ -153,4 +154,4 @@ def parse():
                         if query_return == -1:
                             print("We could not find information about that team, remember input is case sensitive, type help for help")
                             query_return = ""
-                        print("query_return: " + str(query_return))
+                        print(str(query_return))
