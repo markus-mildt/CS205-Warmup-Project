@@ -150,7 +150,9 @@ def parse():
                         column = query_input[column_start:]
                         table = "teams"
                         query_return = query(index, column, table)
+
                         if query_return == -1:
                             print("We could not find information about that team, remember input is case sensitive, type help for help")
                             query_return = ""
-                        print("query_return: " + str(query_return))
+                        # print(query_return)
+                        print("query_return: bruh" + str(query_return))
