@@ -57,6 +57,9 @@ def parse():
 
             valid = False
 
+            #######testing
+            query_input = "team \"New York\""
+
             ###
             # getting the stuff between quotes if there are quotes
             ###
@@ -111,7 +114,7 @@ def parse():
                             print("We could not find that player's " + column)
                             print("Remember input is case sensitive and try again, or try another query")
                             query_return = ""
-                        print(str(query_return))
+                        #print(str(query_return))
 
 
             # team name location
@@ -131,7 +134,7 @@ def parse():
                         if query_return == -1:
                             print("We could not find a team at that location, remember that input is case-sensitive and try again, or try another query. Type help for help")
                             query_return = ""
-                        print(str(query_return))
+                        #print(str(query_return))
 
                     else:
                         print("Your query cannot be recognized, type help for help")
@@ -157,4 +160,8 @@ def parse():
                         if query_return == -1:
                             print("We could not find information about that team, remember input is case sensitive, type help for help")
                             query_return = ""
-                        print(str(query_return))
+            if type(query_return) is list:
+                for printable in query_return:
+                    print(str(printable)[2:-3])
+            else:
+                print(str(query_return))
