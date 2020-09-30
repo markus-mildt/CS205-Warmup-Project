@@ -57,14 +57,6 @@ def parse():
 
             valid = False
 
-            ###########
-            # testing, delete later
-            ##########
-            query_input = "New York Islanders players"
-            ##########
-            # Testing, delete later
-            #########
-
             ###
             # getting the stuff between quotes if there are quotes
             ###
