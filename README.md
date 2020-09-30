@@ -32,6 +32,7 @@ Team Name goals - gets the number of goals for a user-specified team
 Team "location" - gets the team(s) at a user-specified location  
     SELECT DISTINCT team_name FROM Teams WHERE location = ?;
 
+Team Name player - gets the players from a specific team
 
 Sources:
 https://www.mcobject.com/docs/Content/Programming/Python/Classes/Cursor/execute_many.htm
