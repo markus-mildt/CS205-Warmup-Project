@@ -208,7 +208,47 @@ def get_all_players_from_team(player_team, conn):
         # print("There was nothing to match with your input.")
         return -1
 
-    # conn.commit()
+def get_player_stats(player_name, conn):
+    # if whatever the user requested does not exist query should return -1
+
+    # format query from arg
+
+    if conn == None:
+        return "No connection found. Please enter the command 'load data' in the terminal."
+
+    cur = conn.cursor()
+    query = "SELECT DISTINCT player_name, player_team, current_position, individual_goals_scored " \
+            "FROM Players WHERE player_name =?"
+    cur.execute(query, (player_name,))
+    query_output = cur.fetchall()
+    conn.commit()
+
+    if len(query_output) != 0:
+        return query_output
+    else:
+        # print("There was nothing to match with your input.")
+        return -1
+
+def get_team_stats(team_name, conn):
+    # if whatever the user requested does not exist query should return -1
+
+    # format query from arg
+
+    if conn == None:
+        return "No connection found. Please enter the command 'load data' in the terminal."
+
+    cur = conn.cursor()
+    query = "SELECT DISTINCT team_name, location, total_goals_scored " \
+            "FROM Teams WHERE team_name =?"
+    cur.execute(query, (team_name,))
+    query_output = cur.fetchall()
+    conn.commit()
+
+    if len(query_output) != 0:
+        return query_output
+    else:
+        # print("There was nothing to match with your input.")
+        return -1
 
 def test():
     conn = db.load_data()
@@ -246,7 +286,18 @@ def test():
     else:
         passed = False
 
-    # Can not test these values because they return a tuple and the get all players function
-    # would need over 30 players to compare the answer
-    get_all_teams_from_location("New York", conn)
-    get_all_players_from_team("Buffalo Sabres", conn)
+
+    if ('Jack Eichel', 'Buffalo Sabres', 'Center', 36) in get_player_stats("Jack Eichel", conn):
+        passed = True
+    else:
+        passed = False
+
+
+    if ('Buffalo Sabres', 'New York', 193) in get_team_stats("Buffalo Sabres", conn):
+        passed = True
+    else:
+        passed = False
+
+
+
+    return passed
