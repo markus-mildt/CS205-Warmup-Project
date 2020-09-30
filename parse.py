@@ -58,7 +58,7 @@ def parse():
             valid = False
 
             #######testing
-            query_input = "team \"New York\""
+            # query_input = "team \"New York\""
 
             ###
             # getting the stuff between quotes if there are quotes
