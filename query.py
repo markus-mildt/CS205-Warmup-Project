@@ -12,7 +12,6 @@ def query(index, column, table):
     # query takes 3 arguments
     # index is whatever the user puts between quotes or the name of the team
     # column should correspond with the column of a table
-
     # if whatever the user requested does not exist query should return -1
 
     conn = db.load_data()
@@ -44,11 +43,8 @@ def query(index, column, table):
         if column == "players":
             return get_all_players_from_team(index, conn)
 
-
-
 def get_player_team(player_name, conn):
     # format query from arg
-
     #check if there is a connection
     if conn is None:
         return "No connection found. Please enter the command 'load data' in the terminal."
@@ -74,8 +70,6 @@ def get_player_team(player_name, conn):
         # print("There was nothing to match with your input.")
         return -1
 
-
-
 #returns the position of a player
 def get_player_position(player_name, conn):
     #check for connection
@@ -100,12 +94,9 @@ def get_player_position(player_name, conn):
         # print("There was nothing to match with your input.")
         return -1
 
-
-
 #returns the location of a team
 def get_team_location(team_name, conn):
     # if whatever the user requested does not exist query should return -1
-
     # format query from arg
 
     if conn == None:
@@ -124,12 +115,9 @@ def get_team_location(team_name, conn):
         # print("There was nothing to match with your input.")
         return -1
 
-
-
 #returns the number of goals a team had in regular season
 def get_team_goals(team_name, conn):
     # if whatever the user requested does not exist query should return -1
-
     # format query from arg
 
     if conn == None:
@@ -153,7 +141,6 @@ def get_team_goals(team_name, conn):
 #returns the number of goals a player had in regular season
 def get_player_goals(player_name, conn):
     # if whatever the user requested does not exist query should return -1
-
     # format query from arg
 
     if conn == None:
@@ -177,7 +164,6 @@ def get_player_goals(player_name, conn):
 #returns all teams from one location
 def get_all_teams_from_location(location, conn):
     # if whatever the user requested does not exist query should return -1
-
     # format query from arg
 
     if conn == None:
@@ -195,10 +181,6 @@ def get_all_teams_from_location(location, conn):
     else:
         # print("There was nothing to match with your input.")
         return -1
-
-    # conn.commit()
-
-
 
 #returns all players on a team
 def get_all_players_from_team(player_team, conn):
@@ -224,7 +206,6 @@ def get_all_players_from_team(player_team, conn):
 
 def get_player_stats(player_name, conn):
     # if whatever the user requested does not exist query should return -1
-
     # format query from arg
 
     if conn == None:
@@ -246,7 +227,6 @@ def get_player_stats(player_name, conn):
 
 def get_team_stats(team_name, conn):
     # if whatever the user requested does not exist query should return -1
-
     # format query from arg
 
     if conn == None:
