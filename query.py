@@ -25,7 +25,7 @@ def query(index, column, table):
         if column == "position":
             return get_player_position(index, conn)
         if column == "location":
-            return get_team_location(get_player_team(index, conn), conn)
+            return get_team_location(get_player_team(index, conn), conn) #JOIN query
         if column == "goals":
             return get_player_goals(index, conn)
 
@@ -42,6 +42,8 @@ def query(index, column, table):
             return  get_team_goals(index, conn)
         if column == "players":
             return get_all_players_from_team(index, conn)
+
+
 
 def get_player_team(player_name, conn):
     # format query from arg

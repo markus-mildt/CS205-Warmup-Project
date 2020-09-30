@@ -4,7 +4,7 @@ import load_data
 
 def parse():
     print("Welcome to our NHL interface! Type 'help' for suggestions or 'quit' to exit!")
-    print("")
+
     parsing = True
     while parsing:
         waiting_for_input = True
