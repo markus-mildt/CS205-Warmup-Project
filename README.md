@@ -5,7 +5,7 @@
 
 Commands: 
 
-quit- quits the program
+quit - quits the program
 
 help - get help with commands  
 
