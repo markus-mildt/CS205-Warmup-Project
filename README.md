@@ -12,7 +12,7 @@ help - get help with commands
 load data - creates the database and loads the data from the csv  
 
 "Player Name" location - gets the location of the team that the user-specified player is on  
-    SELECT location FROM Players WHERE player_name = ?;
+    this one will use the Player's name get the team, then uses the team to get the location
 
 "Player Name" team - gets the name of the team that a user-specified player is on  
     SELECT team_name FROM Players WHERE player_name = ?;
@@ -39,4 +39,5 @@ https://www.sqlitetutorial.net/sqlite-python/sqlite-python-select/
 https://datatofish.com/create-database-python-using-sqlite3/
 https://www.sqlitetutorial.net/sqlite-python/
 https://docs.python.org/2/library/sqlite3.html
+
 
