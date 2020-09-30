@@ -36,5 +36,7 @@ Team "location" - gets the team(s) at a user-specified location
 Sources:
 https://www.mcobject.com/docs/Content/Programming/Python/Classes/Cursor/execute_many.htm
 https://www.sqlitetutorial.net/sqlite-python/sqlite-python-select/
-https://help.semmle.com/wiki/display/PYTHON/Asserting+a+tuple
+https://datatofish.com/create-database-python-using-sqlite3/
+https://www.sqlitetutorial.net/sqlite-python/
+https://docs.python.org/2/library/sqlite3.html
 

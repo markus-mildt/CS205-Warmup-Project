@@ -212,10 +212,41 @@ def get_all_players_from_team(player_team, conn):
 
 def test():
     conn = db.load_data()
-    get_player_team("Jack Eichel", conn)
-    # get_player_position("Jack Eichel", conn)
-    # get_team_location("Buffalo Sabres", conn)
-    # get_team_goals("Buffalo Sabres", conn)
-    # get_player_goals("Jack Eichel", conn)
-    # get_all_teams_from_location("New York", conn)
-    # get_all_players_from_team("Buffalo Sabres", conn)
+    passed = True
+
+    if (get_player_team("Jack Eichel", conn) == "Buffalo Sabres"):
+        passed = True
+    else:
+        passed = False
+
+
+    if (get_player_position("Jack Eichel", conn) == "Center"):
+        passed = True
+    else:
+        passed = False
+
+    if (get_team_location("Buffalo Sabres", conn) == "New York"):
+        passed = True
+    else:
+        passed = False
+
+    # tests a players location
+    if (get_team_location(get_player_team("Jack Eichel", conn), conn) == "New York"):
+        passed = True
+    else:
+        passed = False
+
+    if (get_team_goals("Buffalo Sabres", conn) == 193):
+        passed = True
+    else:
+        passed = False
+
+    if (get_player_goals("Jack Eichel", conn) == 36):
+        passed = True
+    else:
+        passed = False
+
+    # Can not test these values because they return a tuple and the get all players function
+    # would need over 30 players to compare the answer
+    get_all_teams_from_location("New York", conn)
+    get_all_players_from_team("Buffalo Sabres", conn)
