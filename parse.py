@@ -49,7 +49,7 @@ def parse():
             # team name goals
             # team "location"
 
-            valid_columns = ["team", "position", "goals", "location"]
+            valid_columns = ["team", "position", "goals", "location", "players"]
             # get input from keyboard
             print("")
             query_input = ""
@@ -57,8 +57,13 @@ def parse():
 
             valid = False
 
-            #######testing
-            query_input = "team \"New York\""
+            ###########
+            # testing, delete later
+            ##########
+            query_input = "New York Islanders players"
+            ##########
+            # Testing, delete later
+            #########
 
             ###
             # getting the stuff between quotes if there are quotes
@@ -83,13 +88,7 @@ def parse():
                 print("Thank you! We hope you return soon!")
                 return 0
 
-            ###########
-            # testing, delete later
-            ##########
-            # query_input = "\"Jack Eichel\" team"
-            ##########
-            # Testing, delete later
-            #########
+
 
 
             # "player name" team        teams do NOT start with quotes
@@ -142,6 +141,7 @@ def parse():
                 else:
                     # team name location
                     # team name goals
+                    #team name players
                     # getting the index where the second space in the query is
                     for column in valid_columns:
                         column_start = query_input.find(column)

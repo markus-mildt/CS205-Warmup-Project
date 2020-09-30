@@ -41,6 +41,8 @@ def query(index, column, table):
             return get_team_location(index, conn)
         if column == "goals":
             return  get_team_goals(index, conn)
+        if column == "players":
+            return get_all_players_from_team(index, conn)
 
 
 
